@@ -14,7 +14,7 @@ import java.util.List;
  * PmsBrandService实现类
  * Created by macro on 2019/4/19.
  */
-@Service
+@Service("ss")
 public class PmsBrandServiceImpl implements PmsBrandService {
     @Autowired
     private PmsBrandMapper brandMapper;
@@ -49,5 +49,11 @@ public class PmsBrandServiceImpl implements PmsBrandService {
     @Override
     public PmsBrand getBrand(Long id) {
         return brandMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public Boolean justTest(String ss) {
+        System.out.println(ss);
+        return true;
     }
 }
